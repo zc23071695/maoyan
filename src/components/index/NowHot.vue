@@ -110,6 +110,7 @@ export default {
             max-width: calc(100% - 25px);
             color: #191a1b;
             font-size: 16px;
+            font-weight: 700;
             height: 22px;
             line-height: 22px;
             margin-right: 5px;
@@ -163,11 +164,13 @@ export default {
         line-height: 25px;
         height: 25px;
         width: 50px;
-        color: #ff5f16;
+        color: #fff;
+        background: #F03D37;
         font-size: 13px;
         text-align: center;
         border-radius: 2px;
         position: relative;
+        margin-top: 30px;
       }
     }
   }

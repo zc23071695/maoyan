@@ -28,18 +28,18 @@ export default {
     WillBe
   },
   methods: {
-    onScroll () {
-      let top = document.documentElement.scrollTop;
-      // if (top >= 52) {
+  //   onScroll () {
+  //     let top = document.documentElement.scrollTop;
+  //     if (top >= 52) {
 
-      // }else {
+  //     }else {
 
-      // }
-      // console.log(document.documentElement.scrollTop)
-    }
-  },
-  mounted () {
-    window.addEventListener('scroll', this.onScroll)
+  //     }
+  //     console.log(document.documentElement.scrollTop)
+  //   }
+  // },
+  // mounted () {
+  //   window.addEventListener('scroll', this.onScroll)
   }
 }
 </script>
