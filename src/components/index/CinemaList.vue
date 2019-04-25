@@ -59,7 +59,6 @@ export default {
 
 .box-three{
     box-sizing: border-box;
-    margin-top:135px;
 }
 ul{
     margin-left: 15px;
@@ -118,11 +117,11 @@ ul{
             overflow: hidden;
             white-space: nowrap;
         }
-        
+
         .distanse{
             margin-left: 5px;
         }
-        
+
         .label{
             width: 100%;
             height: 20px;

@@ -13,16 +13,31 @@
         <h6>{{ list.src }}/181分钟</h6>
         <h1>{{ list.pubDesc }}</h1>
       </div>
-    </div>
+      </div>
+        <van-tabs class="tabbar" title-active-color="#E54847" >
+          <van-tab title="今天04月25日">
+            <CinemaList/>
+          </van-tab>
+          <van-tab title="明天04月26日">
+            <CinemaList/>
+          </van-tab>
+          <van-tab title="后天04月27日">
+            <CinemaList/>
+          </van-tab>
+    </van-tabs>
   </div>
 </template>
 
 <script>
+import CinemaList from '../index/CinemaList.vue'
 export default {
   data () {
     return {
       list: []
     }
+  },
+  components: {
+    CinemaList
   },
   methods: {
     requestData(){
