@@ -1,10 +1,37 @@
 <template>
   <div id="cinema">
     <h2>影院</h2>
+    <CinemaList/>
   </div>
 </template>
 
+<script>
+import CinemaList from './CinemaList.vue'
+export default {
+  data () {
+    return {
 
+    }
+  },
+  components: {
+    CinemaList
+  },
+  methods: {
+    onScroll () {
+      let top = document.documentElement.scrollTop;
+      // if (top >= 52) {
+
+      // }else {
+
+      // }
+      // console.log(document.documentElement.scrollTop)
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+  }
+}
+</script>
 
 <style lang="scss" scoped>
   #cinema{

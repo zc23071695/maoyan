@@ -12,7 +12,7 @@
 <script>
 export default {
   data() {
-    let active = this.$route.meta.tabNumver
+    let active = this.$route.meta.tabNumber
     return {
       active: active
     }
