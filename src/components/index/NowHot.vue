@@ -7,7 +7,7 @@
           <li class="item"
             v-for="item in list"
             :key="item.id">
-            <router-link :to="'/movie/' + item.id">
+            <router-link :to="{ name: 'detail', params: {id: item.id} }">
               <div class="img">
                 <img :src="item.img.replace(/w.h/,'64.90')" alt />
               </div>

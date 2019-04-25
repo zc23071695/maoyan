@@ -1,15 +1,17 @@
 <template>
   <div id="detail">
-    <h2><span>&lt;</span>复仇者联盟4:终局之战</h2>
+    <h2><span @click="goBack()">&lt;</span>{{ list.nm }}</h2>
     <div class="detail">
       <div class="left">
-        <img src="" alt="">
+        <img :src="list.img.replace(/w.h/,'110.150')" alt="">
       </div>
       <div class="right">
-        <h3>复仇者联盟4:终局之战</h3>
-        <p>Avengers: Endgame</p>
-        <h4><span>9.3</span>(26.8万人评)</h4>
-        <h5>动作,冒险,奇幻</h5>
+        <h3>{{ list.nm }}</h3>
+        <p>{{ list.enm }}</p>
+        <h4><span>{{ list.sc }}</span>(26.8万人评)</h4>
+        <h5>{{ list.cat }}</h5>
+        <h6>{{ list.src }}/181分钟</h6>
+        <h1>{{ list.pubDesc }}</h1>
       </div>
     </div>
   </div>
@@ -24,13 +26,17 @@ export default {
   },
   methods: {
     requestData(){
-      let api = `/maoyan/ajax/detailmovie?movieId=${this.$router.params.id}`;
+      let id = this.$route.params.id
+      let api = '/maoyan/ajax/detailmovie?movieId=' + id;
       this.$http.get(api).then(response => {
       console.log(response);
-      // this.list = response.body.movieList;
+      this.list = response.body.detailMovie;
     }, response => {
         console.log(err)
       });
+    },
+    goBack () {
+      this.$router.go(-1);
     }
   },
   created () {
@@ -62,12 +68,11 @@ export default {
     .detail{
       height: 190px;
       width: 100%;
-      background: #ccc;
+     background:#1A1F40;
       padding: 15px 20px 15px 15px;
       .left{
         width: 110px;
         height: 150px;
-        background: #000;
         margin-right: 10px;
         float: left;
       }
@@ -75,7 +80,38 @@ export default {
         float: left;
         width: 210px;
         height: 150px;
-        background: #652525;
+        // background: #652525;
+        h3{
+          color: #fff;
+          font-weight: 600;
+          font-size: 20px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        p{
+          font-size: 12px;
+          line-height: 25px;
+        }
+        h4{
+          font-size: 12px;
+          span{
+            color: #fc0;
+            font-size: 18px;
+            font-weight: 700;
+          }
+        }
+        h5{
+          font-size: 12px;
+          line-height: 25px;
+        }
+        h6{
+          font-size: 12px;
+          line-height: 25px;
+        }
+        h1{
+          font-size: 12px;
+        }
       }
     }
   }

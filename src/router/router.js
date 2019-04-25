@@ -18,13 +18,13 @@ const routes = [
       { path: 'movie', component: Movie, name:'movie', meta: { tabNumber: 0 }},
       { path: 'cinema', component: Cinema, name:'cinema', meta: { tabNumber: 1 }},
       { path: 'user', component: User, name:'user', meta: { tabNumber: 2 }},
-      { path: '', redirect: '/movie/NowHot'}
+      { path: '', redirect: '/movie'}
     ]
   },
   { path: '/movie/:id', component: Detail, name: 'detail' },
   { path: 'city', component: City, name: 'city' },
   { path: 'serch', component: Serch, name: 'serch' },
-  { path: '*', redirect: '/movie/NowHot' }
+  { path: '*', redirect: '/movie' }
 ]
 
 const router = new VueRouter({
