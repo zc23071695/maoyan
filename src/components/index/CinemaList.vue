@@ -1,15 +1,19 @@
 <template>
-  <div>
+  <div class="box-three">
       <ul>
           <li v-for="item in list" :key="item.id">
-              <div class="line-ellipsis">
-                  <span>{{ item.nm }}</span>
-                  <span class="price">{{ item.sellPrice }}</span>
-                  <span class="p">元起</span>
+              <div class="title-block">
+                  <div class="line-ellipsis">
+                    <span>{{ item.nm }}</span>
+                  <span class="price-block">
+                    <span class="price">{{ item.sellPrice }}</span>
+                    <span class="p">元起</span>
+                  </span>
                   </div>
+              </div>
               <div class="location-block">
-                  <span class="line">{{ item.addr }}</span>
-                  <span class="distance">{{ item.distance }}</span>
+                  <div class="line">{{ item.addr }}</div>
+                  <div class="distance">{{ item.distance }}</div>
                   </div>
               <div class="label">
                     <span class="refound">退</span>
@@ -53,6 +57,10 @@ export default {
 <style lang="less">
 @import '../../css/mixins.less';
 
+.box-three{
+    box-sizing: border-box;
+    margin-top:135px;
+}
 ul{
     margin-left: 15px;
     display: flex;
@@ -64,13 +72,24 @@ ul{
         position: relative;
         overflow: hidden;
 
+        .title-block{
+            display: block;
+            -webkit-box-align: center;
+            align-items: center;
+            line-height: 1.5;
+        }
         .line-ellipsis{
+            width: 100%;
             height: 23px;
             line-height: 23px;
             font-size: 16px;
             color: #000;
         }
 
+        .price-block{
+            padding-top: 9px;
+            padding-left: 3px;
+        }
         .price{
             padding-left: 3px;
             font-size: 18px;
@@ -84,19 +103,29 @@ ul{
         }
 
         .location-block{
+            display: -webkit-box;
+            display: flex;
+            width: 100%;
             margin-top: 6px;
             font-size: 13px;
             color: #666;
         }
 
         .line{
+            -webkit-box-flex: 1;
+            flex: 1;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
         }
         
+        .distanse{
+            margin-left: 5px;
+        }
+        
         .label{
-            height: 17px;
+            width: 100%;
+            height: 20px;
             line-height: 17px;
             margin-top: 4px;
             margin-bottom: 4px;
@@ -109,7 +138,7 @@ ul{
             position: relative;
             display: inline-block;
             padding: 0 3px;
-            height: 16px;
+            height: 18px;
             line-height: 15px;
             border-radius: 2px;
             font-size: .6rem;
@@ -122,7 +151,7 @@ ul{
             position: relative;
             display: inline-block;
             padding: 0 3px;
-            height: 16px;
+            height: 18px;
             line-height: 15px;
             border-radius: 2px;
             font-size: .6rem;
@@ -135,15 +164,17 @@ ul{
             position: relative;
             display: inline-block;
             padding: 0 3px;
-            height: 16px;
+            height: 18px;
             line-height: 15px;
             border-radius: 2px;
             font-size: .6rem;
         }
 
         .discount{
+            width: 100%;
             color: #999;
             margin-bottom: 4px;
+            line-height: 1.5;
         }
 
         .normal{
