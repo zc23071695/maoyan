@@ -7,14 +7,14 @@
           <li class="item"
             v-for="item in list"
             :key="item.id">
-            <!-- <router-link :to="'/film/' + item.filmId"> -->
+            <router-link :to="{ name: 'detail', params: {id: item.id} }">
               <div class="img">
-                <img :src="item.img.replace(/w.h/,'128.80')" alt />
+                <img :src="item.img.replace(/w.h/,'64.90')" alt />
               </div>
               <div class="info">
                 <div class="film-name info-col">
                   <span class="name">{{ item.nm }}</span>
-                  <span class="item">{{ item.version }}</span>
+                  <!-- <span class="item">{{ item.version }}</span> -->
                 </div>
                 <div class="film-grade info-col" style="visibility: visible;">
                   <span class="label">观众评分</span>
@@ -28,7 +28,7 @@
                 </div>
               </div>
               <div class="buy">购票</div>
-            <!-- </router-link> -->
+            </router-link>
           </li>
         </ul>
       </van-list>
@@ -80,6 +80,7 @@ export default {
       > a {
         display: flex;
         align-items: center;
+        width: 100%;
       }
 
       .img {

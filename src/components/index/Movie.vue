@@ -3,12 +3,18 @@
     <div class="nian">
       <h2>猫眼电影</h2>
         <van-tabs class="tabbar" title-active-color="#E54847" >
+          <!-- <van-tab title="">
+
+          </van-tab> -->
           <van-tab title="正在热映">
             <NowHot />
           </van-tab>
           <van-tab title="即将上映">
             <WillBe />
           </van-tab>
+          <!-- <van-tab title="">
+
+          </van-tab> -->
         </van-tabs>
     </div>
   </div>

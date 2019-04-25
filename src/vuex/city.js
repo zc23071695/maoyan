@@ -8,12 +8,12 @@ export default new Vuex.Store({
     movieList: [1, 5, 6]
   },
   mutations: {
-    setList(state, list) {
+    setList (state, list) {
       state.movieList = list
     }
   },
   actions: {
-    getList({ commit }) {
+    getList ({ commit }) {
       Axios.get(
         '/maoyan/ajax/comingList?ci=30&token=3WfWQnZplDpXQ3q7ZqeBGMdTGW0AAAAAPAgAAGMmxf8otzxNym35VHVI_x5s-EDAmg5krV7WMHljzuBlw5nLup4eJ27vP5LSorhZPg&limit=10'
       ).then(res => {

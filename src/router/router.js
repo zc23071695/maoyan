@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-Vue.use(VueRouter)
 
 import Index from '../components/index/Index.vue'
 import Movie from '../components/index/Movie.vue'
@@ -8,6 +7,8 @@ import Cinema from '../components/index/Cinema.vue'
 import User from '../components/index/User.vue'
 import City from '../components/city/City.vue'
 import Serch from '../components/serch/Serch.vue'
+import Detail from '../components/detail/Detail.vue'
+Vue.use(VueRouter)
 
 const routes = [
   {
@@ -31,7 +32,11 @@ const routes = [
     ]
   },
   { path: '/city', component: City, name: 'city' },
-  { path: 'serch', component: Serch, name: 'serch' }
+  { path: 'serch', component: Serch, name: 'serch' },
+  { path: '/movie/:id', component: Detail, name: 'detail' },
+  { path: 'city', component: City, name: 'city' },
+  { path: 'serch', component: Serch, name: 'serch' },
+  { path: '*', redirect: '/movie' }
 ]
 
 const router = new VueRouter({

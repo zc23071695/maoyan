@@ -2,19 +2,19 @@
   <div id="willbe">
     <div class="swiper">
       <p>近期受到期待</p>
-      <ul>
-        <li v-for="item in slist" :key="item.id">
+      <div class="ullist">
+        <div class="ulli" v-for="item in slist" :key="item.id">
           <dl>
             <dt>
-              <img :src="item.img.replace(/w.h/,'128.80')" alt="">
+              <img :src="item.img.replace(/w.h/,'85.115')" alt="">
             </dt>
             <dd>
               <h2>{{ item.nm }}</h2>
               <span>{{ item.comingTitle }}</span>
             </dd>
           </dl>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
     <div class="bg"></div>
     <div class="movie_list">
@@ -27,7 +27,7 @@
             :key="item.id">
             <!-- <router-link :to="'/film/' + item.filmId"> -->
               <div class="img">
-                <img :src="item.img.replace(/w.h/,'128.80')" alt />
+                <img :src="item.img.replace(/w.h/,'64.90')" alt />
               </div>
               <div class="info">
                 <div class="film-name info-col">
@@ -106,26 +106,27 @@ export default {
       p{
         color: #000;
       }
-      ul{
+      .ullist{
         margin-top: 10px;
-        overflow: scroll;
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: row;
-        overflow: auto;
-        li{
+        // display: flex;
+        // flex-direction: row;
+        // overflow: auto;
+        overflow: scroll;
+        white-space: nowrap;
+        .ulli{
           width: 85px;
-          height: 155px;
+          height: 175px;
           margin-right: 15px;
+          overflow: hidden;
+          display: inline-block;
           dl{
             width: 85px;
             height: 100%;
-
             dt{
-              width: 100%;
-              height: 115px;
-
+               width: 100%;
+                height: 115px;
               img{
                 width: 100%;
                 height: 100%;
